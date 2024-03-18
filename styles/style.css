@@ -1,31 +1,309 @@
+:root {
+  --color-main: rgb(240, 240, 240);
+  --color-second: rgb(43, 117, 234);
+  --color-dark: rgb(29, 29, 29);
+  --font-size-small: 18px;
+  --font-size-medium: 24px;
+  --font-size-large: 36px;
+}
+* {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+.text {
+  margin: 0;
+  padding: 0;
+}
 .page {
+  position: relative;
   min-width: 1100px;
   /* мы ещё не умеем делать мобильную версию сайта, */
   /* поэтому выше установлена минимальная ширина страницы */
   max-width: 1600px;
+  width: 100%;
   /* выше установили ограничение по максимальной ширине */
   margin: 0 auto;
   /* выше для экранов больше 1600px отцентрировали весь контент */
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+  
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.color_theme_dark {
+  color: rgb(255, 255, 255);
 }
 
 .header {
+  position: relative;
   height: 100vh;
   min-height: 600px;
   max-height: 756px;
+  width: 100%;
+  display: flex;
+  background-color: var(--color-main);
   /* выше установили ограничения для секции */
+}
+.header_text_container {
+  position: relative;
+  display: flex;
+  height: 100%;
+}
+
+.logo_place_header {
+  position: absolute;
+  left: 64px;
+  top: 30px;
+}
+
+.header__title {
+  align-self: center;
+  margin-left: 64px;
+  width: 730px;
+  line-height: 96px;
+  font-size: 102px;
+}
+
+.header__subtitle {
+  position: absolute;
+  left: 64px;
+  bottom: 30px;
+  width: 388px;
+  line-height: 25px;
+  font-size: var(--font-size-small);
+}
+
+.header__main-illustration {
+  position: absolute;
+  width: 765px;
+  height: 608px;
+  right: 0;
+  bottom: 0;
+  background: url("../images/header-image.png") no-repeat 0% 0% / 100%;
 }
 
 /* ниже мы привели пример двух селекторов, чтобы вы вспомнили запись элемента */
 .header__square-pic {
+  position: absolute;
+  right: 0;
+  top: 64px;
   height: 568px;
   width: 568px;
+  background-color: var(--color-second);
 }
 
-/* и элемента с модификатором вида ключ-значение */
-.table__cell_theme_dark {
+.link {
+  text-decoration: none;
+}
+
+.two_columns {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 80%;
+  min-width: 784px;
+  margin-top: 100px;
+}
+
+.two_columns__brief {
+  width: 175px;
+  line-height: 1.2;
+  font-size: var(--font-size-small);
+  color: var(--color-second);
+}
+
+.two_columns__main-text {
+  width: calc(100% - 225px);
+}
+
+.two_columns__main-text > .text {
+  line-height: 34px;
+  font-size: var(--font-size-medium);
+}
+
+.two_columns__main-text > .text:not(:first-child) {
+  margin-top: 30px;
+}
+
+.title {
+  width: 60%;
+  text-align: center;
+  line-height: 1.15;
+  font-size: 60px;
+}
+
+.subtitle {
+  width: 60%;
+  margin-top: 20px;
+  text-align: center;
+  line-height: 34px;
+  font-size: var(--font-size-medium);
+}
+
+.digits {
+  flex-direction: column;
+  justify-content:initial;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.table {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px 0px;
+  justify-content: space-around;
+  width: 1100px;
+  margin-top: 60px;
+}
+
+.table_cell {
+  width: 250px;
+}
+
+
+.table_cell > .text:not(:first-child) {
+  margin-top: 20px;
+  line-height: 1.2;
+  font-size: var(--font-size-small);
+}
+
+.feynman {
+  height: 880px;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  background: url("../images/feynman.png") var(--color-main) no-repeat left bottom;
+  margin-top: 100px;
+}
+
+.feynman__title {
+  width: 648px;
+  margin-top: 100px;
+  text-align: center;
+  line-height: 1.15;
+  font-size: 120px;
+}
+
+.feynman__subtitle {
+  margin-top: 70px;
+  font-size: var(--font-size-large);
+}
+
+.feynman__link {
+  position: absolute;
+  top: 50%;
+  right: 48px;
+  line-height: 51px;
+  font-size: var(--font-size-large);
+}
+
+.feynman__illustration {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.kaufman {
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: url(../images/kaufman-triangle.svg) no-repeat calc(100% + 210px) 0% var(--color-dark);
+  background-size: 877px;
+  padding-bottom: 90px;
+}
+
+
+.kaufman__title {
+  margin-top: 90px;;
+}
+
+.table__theme_dark {
+  margin-top: 80px;
+  gap: 80px 0px;
+}
+
+.table_cell__theme_dark {
   width: 200px;
   color: white;
-  margin-right: 0;
-  margin-top: 80px;
+}
+
+.footer {
+  background-color: var(--color-dark);
+}
+
+.logo_place_footer {
+  color: white;
+}
+
+.footer_columns {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  min-height: 350px;
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+.footer_content {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer_content_copyright {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-basis: 711px;
+}
+
+.footer_author {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin: 18px 0px;
+  line-height: 25px;
+  font-size: var(--font-size-small);
+}
+
+.footer_links {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  line-height: 30px;
+  font-size: var(--font-size-small);
+}
+
+.footer_link {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.social_link_text {
+  margin-left: 10px;
+  color: rgb(196, 196, 196);
+}
+
+.social_link_icon {
+  width: 16px;
+  height: 16px;
+}
+
+.youtube_icon {
+  background: url("../images/youtube-icon.svg") no-repeat center center / 100%;
+}
+
+.vkontakte_icon {
+  background: url("../images/vk_color_white.svg") no-repeat center center / 100%;
+}
+
+.tiktok_icon {
+  background: url("../images/tiktok-icon.svg") no-repeat center center / 100%;
 }
